@@ -3,6 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realm of Aetherion - Calculator</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #121824;
+      font-family: sans-serif;
+      color: #fff;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .fallback {
+      display: none;
+      padding: 30px;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background-color: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe 
+    id="calcFrame"
+    src="https://script.google.com/macros/s/AKfycbytOd0--TxiyZV9K1-c2S7DZhd6q_Ckx9Le03KR5hpGmaTuBFP---AyMnudyKUSZWkdig/exec" 
+    allow="clipboard-write"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+  </iframe>
+
+  <div id="fallbackBox" class="fallback">
+    <h2>Opening Calculator...</h2>
+    <p>If the app does not load automatically due to mobile cookie restrictions, tap below:</p>
+    <a id="directLink" href="https://script.google.com/macros/s/AKfycbytOd0--TxiyZV9K1-c2S7DZhd6q_Ckx9Le03KR5hpGmaTuBFP---AyMnudyKUSZWkdig/exec" class="btn">Open Calculator App</a>
+  </div>
+
+  <script>
+    // Fallback detection if mobile browser blocks iframe rendering
+    var frame = document.getElementById('calcFrame');
+    var timer = setTimeout(function() {
+      try {
+        if (!frame.contentWindow || frame.contentWindow.length === 0) {
+          // Frame was blocked by third-party cookie policy
+        }
+      } catch (e) {
+        // Cross-origin access succeeded or blocked normally
+      }
+    }, 2500);
+  </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Realm of Aetherion Calculator</title>
   <style>
     html, body {
@@ -21,6 +92,6 @@
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbytOd0--TxiyZV9K1-c2S7DZhd6q_Ckx9Le03KR5hpGmaTuBFP---AyMnudyKUSZWkdig/exec"></iframe>
+  <iframe src=""></iframe>
 </body>
 </html>
