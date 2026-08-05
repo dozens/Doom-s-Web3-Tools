@@ -49,7 +49,7 @@
   <iframe 
     id="calcFrame"
     src="https://script.google.com/macros/s/AKfycbytOd0--TxiyZV9K1-c2S7DZhd6q_Ckx9Le03KR5hpGmaTuBFP---AyMnudyKUSZWkdig/exec" 
-    allow="clipboard-write"
+    allow="clipboard-write">
   </iframe>
 
   <div id="fallbackBox" class="fallback-container">
@@ -59,7 +59,6 @@
   </div>
 
   <script>
-    // Automatically reveal fallback option after 4 seconds if mobile browser blocks iframe rendering
     setTimeout(function() {
       var fallback = document.getElementById('fallbackBox');
       if (fallback) {
